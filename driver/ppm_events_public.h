@@ -996,7 +996,11 @@ enum ppm_event_type {
 	PPME_SYSCALL_COPY_FILE_RANGE_X = 333,
 	PPME_SYSCALL_CLONE3_E = 334,
 	PPME_SYSCALL_CLONE3_X = 335,
-	PPM_EVENT_MAX = 336
+	PPME_USERADDED_E = 336,
+	PPME_USERADDED_X = 337,
+	PPME_USERDELETED_E = 338,
+	PPME_USERDELETED_X = 339,
+	PPM_EVENT_MAX = 340
 };
 /*@}*/
 
@@ -1374,6 +1378,7 @@ enum ppm_event_flags {
 	EF_OLD_VERSION = (1 << 9), /* This event is kept for backward compatibility */
 	EF_DROP_SIMPLE_CONS = (1 << 10), /* This event can be skipped by consumers that privilege low overhead to full event capture */
 	EF_LARGE_PAYLOAD = (1 << 11), /* This event has a large payload, ie: up to UINT32_MAX bytes. DO NOT USE ON syscalls-driven events!!! */
+	EF_INTERNAL = (1 << 12), /* This event is an internal one, do not consider it */
 };
 
 /*
