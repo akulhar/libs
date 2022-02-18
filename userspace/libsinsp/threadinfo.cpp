@@ -405,7 +405,6 @@ void sinsp_threadinfo::init(scap_threadinfo* pi)
 	m_fdlimit = pi->fdlimit;
 	m_uid = pi->uid;
 	m_gid = pi->gid;
-
 	m_vmsize_kb = pi->vmsize_kb;
 	m_vmrss_kb = pi->vmrss_kb;
 	m_vmswap_kb = pi->vmswap_kb;
@@ -423,7 +422,6 @@ void sinsp_threadinfo::init(scap_threadinfo* pi)
 	m_root = pi->root;
 	ASSERT(m_inspector);
 	m_inspector->m_container_manager.resolve_container(this, !m_inspector->is_capture());
-
 	//
 	// Prepare for filtering
 	//
